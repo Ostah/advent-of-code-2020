@@ -1,4 +1,4 @@
-package com.ostach.advent.day1;
+package com.ostach.advent.day1.one;
 
 
 import com.ostach.advent.FileUtils;
@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toSet;
 
-public class Day1 {
+public class Day1_1 {
 
     public void run() {
         Set<Integer> inputList = prepareInputData();

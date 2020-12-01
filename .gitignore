@@ -1,3 +1,4 @@
 .idea/*
 *.iml
-/advent/advent.iml
+/advent/target/
+advent/advent.iml
