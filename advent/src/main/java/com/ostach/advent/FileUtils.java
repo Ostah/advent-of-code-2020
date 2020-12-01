@@ -1,4 +1,4 @@
-package com.ostach.advent.day1;
+package com.ostach.advent;
 
 import lombok.experimental.UtilityClass;
 import org.apache.commons.io.IOUtils;
