@@ -2,7 +2,7 @@ package com.ostach.advent.day1.two;
 
 
 import com.ostach.advent.FileUtils;
-import com.ostach.advent.Numbers;
+import com.ostach.advent.day1.Numbers;
 
 import java.util.Collection;
 import java.util.Set;

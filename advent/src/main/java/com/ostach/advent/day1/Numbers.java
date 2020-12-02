@@ -1,4 +1,4 @@
-package com.ostach.advent;
+package com.ostach.advent.day1;
 
 import com.google.common.collect.ImmutableList;
 
