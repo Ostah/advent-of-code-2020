@@ -1,7 +1,6 @@
-package com.ostach.advent.day2.day1.one;
+package com.ostach.advent.day2.day1.two;
 
 
-import com.google.common.base.CharMatcher;
 import com.ostach.advent.FileUtils;
 import lombok.Builder;
 import lombok.Value;
@@ -12,7 +11,7 @@ import java.util.stream.Stream;
 
 import static java.lang.Integer.parseInt;
 
-class Day2_1 {
+public class Day2_2 {
 
     Pattern pattern = Pattern.compile("(\\d*)-(\\d*) (\\w): (\\w*)");
 
@@ -30,8 +29,8 @@ class Day2_1 {
         Matcher matcher = pattern.matcher(line);
         if (matcher.find()) {
             return PasswordEntry.builder()
-                    .minimumOccurences(parseInt(matcher.group(1)))
-                    .maximumOccurences(parseInt(matcher.group(2)))
+                    .firstPosition(parseInt(matcher.group(1)))
+                    .secondPosition(parseInt(matcher.group(2)))
                     .letter(matcher.group(3).charAt(0))
                     .password(matcher.group(4))
                     .build();
@@ -43,15 +42,26 @@ class Day2_1 {
     @Builder
     @Value
     private static class PasswordEntry {
-        int minimumOccurences;
-        int maximumOccurences;
+        int firstPosition;
+        int secondPosition;
         char letter;
         String password;
 
         boolean isValidPassword() {
-            int occurences = CharMatcher.is(letter).countIn(password);
-            return occurences >= minimumOccurences && occurences <= maximumOccurences;
+            return xor(
+                    charAtPositionEqualTo(password, firstPosition, letter),
+                    charAtPositionEqualTo(password, secondPosition, letter)
+            );
+        }
+
+        private boolean charAtPositionEqualTo(String string, int position, char character) {
+            return position > string.length()
+                    ? false
+                    : string.charAt(position - 1) == character;
+        }
+
+        private boolean xor(boolean x, boolean y) {
+            return ( ( x || y ) && ! ( x && y ) );
         }
     }
-
 }
