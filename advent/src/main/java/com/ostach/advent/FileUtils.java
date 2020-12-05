@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -64,7 +65,7 @@ public class FileUtils {
         ClassLoader classLoader = FileUtils.class.getClassLoader();
         URL url = classLoader.getResource(fileName);
         try {
-            Path path = Paths.get(url.toURI());
+            Path path = Paths.get(Objects.requireNonNull(url).toURI());
             return Files.lines(path)
                     .map(String::toCharArray)
                     .toArray(char[][]::new);

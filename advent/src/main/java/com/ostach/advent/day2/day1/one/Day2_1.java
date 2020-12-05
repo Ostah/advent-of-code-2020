@@ -14,7 +14,7 @@ import static java.lang.Integer.parseInt;
 
 class Day2_1 {
 
-    Pattern pattern = Pattern.compile("(\\d*)-(\\d*) (\\w): (\\w*)");
+    private Pattern pattern = Pattern.compile("(\\d*)-(\\d*) (\\w): (\\w*)");
 
     public void run() {
         Stream<String> lines = FileUtils.getLinesStream("day2/input.txt");

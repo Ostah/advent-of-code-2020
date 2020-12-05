@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toSet;
 
-public class Day1_1 {
+class Day1_1 {
 
     public void run() {
         Set<Integer> inputList = prepareInputData();

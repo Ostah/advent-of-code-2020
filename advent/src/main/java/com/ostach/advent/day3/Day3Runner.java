@@ -1,9 +1,9 @@
 package com.ostach.advent.day3;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
-@NoArgsConstructor
-public class Day3Runner {
+@UtilityClass
+class Day3Runner {
 
     public static void main(String[] args) {
         Day3 day = new Day3();

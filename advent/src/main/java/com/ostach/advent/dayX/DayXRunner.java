@@ -1,9 +1,9 @@
 package com.ostach.advent.dayX;
 
-import lombok.NoArgsConstructor;
+import lombok.experimental.UtilityClass;
 
-@NoArgsConstructor
-public class DayXRunner {
+@UtilityClass
+class DayXRunner {
 
     public static void main(String[] args) {
         new DayX().run1();

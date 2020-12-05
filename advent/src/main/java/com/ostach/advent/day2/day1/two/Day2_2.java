@@ -11,9 +11,9 @@ import java.util.stream.Stream;
 
 import static java.lang.Integer.parseInt;
 
-public class Day2_2 {
+class Day2_2 {
 
-    Pattern pattern = Pattern.compile("(\\d*)-(\\d*) (\\w): (\\w*)");
+    private Pattern pattern = Pattern.compile("(\\d*)-(\\d*) (\\w): (\\w*)");
 
     public void run() {
         Stream<String> lines = FileUtils.getLinesStream("day2/input.txt");
@@ -55,9 +55,7 @@ public class Day2_2 {
         }
 
         private boolean charAtPositionEqualTo(String string, int position, char character) {
-            return position > string.length()
-                    ? false
-                    : string.charAt(position - 1) == character;
+            return position <= string.length() && string.charAt(position - 1) == character;
         }
 
         private boolean xor(boolean x, boolean y) {

@@ -59,7 +59,7 @@ class Day3 {
     private static class FlightMap {
         char[][] matrix;
 
-        public char charAtPosition(Position position) {
+        protected char charAtPosition(Position position) {
             if (position.getY() >= getYLength()) {
                 throw new IllegalArgumentException("Y out of matrix bounds: Y:" + position.getY() + " : array length: " + matrix.length);
             }
@@ -84,7 +84,7 @@ class Day3 {
             return matrix[0].length;
         }
 
-        public boolean isValidPosition(Position position) {
+        protected boolean isValidPosition(Position position) {
             return position.getY() < getYLength();
         }
     }
@@ -95,12 +95,12 @@ class Day3 {
         int x;
         int y;
 
-        public Position() {
+        protected Position() {
             x = 0;
             y = 0;
         }
 
-        public Position advance(Slope slope) {
+        protected Position advance(Slope slope) {
             return new Position(x + slope.getDx(), y + slope.getDy());
         }
     }
