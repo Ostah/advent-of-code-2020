@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 @UtilityClass
 public class FileUtils {
 
-    public List<String> getFileLines(String path) {
+    public static List<String> getFileLines(String path) {
         try {
             return IOUtils.readLines(getFileFromResourceAsStream(path), "UTF-8");
         } catch (IOException e) {
@@ -28,7 +28,7 @@ public class FileUtils {
         }
     }
 
-    private InputStream getFileFromResourceAsStream(String fileName) {
+    private static InputStream getFileFromResourceAsStream(String fileName) {
 
         // The class loader that loaded the class
         ClassLoader classLoader = FileUtils.class.getClassLoader();
@@ -42,7 +42,7 @@ public class FileUtils {
         }
     }
 
-    public Stream<String> getLinesStream(String fileName) {
+    public static Stream<String> getLinesStream(String fileName) {
 
         // The class loader that loaded the class
         ClassLoader classLoader = FileUtils.class.getClassLoader();
@@ -56,12 +56,12 @@ public class FileUtils {
         }
     }
 
-    public String getString(String fileName) {
+    public static String getString(String fileName) {
         return getLinesStream(fileName)
                 .collect(Collectors.joining("\n"));
     }
 
-    public char[][] getCharactersArray(String fileName) {
+    public static char[][] getCharactersArray(String fileName) {
         ClassLoader classLoader = FileUtils.class.getClassLoader();
         URL url = classLoader.getResource(fileName);
         try {
