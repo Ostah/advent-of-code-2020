@@ -3,9 +3,12 @@ package com.ostach.advent.dayX;
 
 class DayX {
 
-    public void run1() {
+    public long run1(String path) {
+        return 0;
     }
-    public void run2() {
+
+    public long run2(String path) {
+        return 0;
     }
 
 }

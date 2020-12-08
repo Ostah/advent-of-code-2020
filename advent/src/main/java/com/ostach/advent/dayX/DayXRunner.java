@@ -6,7 +6,8 @@ import lombok.experimental.UtilityClass;
 class DayXRunner {
 
     public static void main(String[] args) {
-        new DayX().run1();
-        new DayX().run2();
+        DayX day = new DayX();
+        System.out.println("Result 1: "+ day.run1("dayX/input.txt"));
+        System.out.println("Result 2: "+ day.run2("dayX/input.txt"));
     }
 }
